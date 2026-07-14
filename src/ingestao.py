@@ -7,6 +7,8 @@ from langchain_community.vectorstores import Chroma
 DIRETORIO_DOCS = "documentos"
 DIRETORIO_CHROMA = "banco_vetorial/chroma_db"
 
+url_ollama = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
+
 def realizar_ingestao():
     print("--- INICIANDO INGESTÃO DE DOCUMENTOS ---")
     
@@ -51,7 +53,7 @@ def realizar_ingestao():
     print(f"Documentos divididos em {len(documentos_divididos)} pedaços.")
 
     # Configura os Embeddings (Ollama)
-    embeddings = OllamaEmbeddings(model="nomic-embed-text")
+    embeddings = OllamaEmbeddings(model="nomic-embed-text",base_url=url_ollama)
 
     # Cria e salva o banco vetorial no disco (Persistência)
     print("\nGerando embeddings matemáticos e salvando no ChromaDB.")

@@ -60,7 +60,7 @@ streamlit run app.py
 docker build -t assistente-rag .
 
 # 2. Rodar o contêiner
-docker run -p 8501:8501 -e OLLAMA_BASE_URL="[http://host.docker.internal:11434](http://host.docker.internal:11434)" assistente-rag
+docker run -p 8501:8501 -e OLLAMA_BASE_URL="http://host.docker.internal:11434" assistente-rag
 ````
 
 Acesse http://localhost:8501

@@ -1,3 +1,4 @@
+import os
 from langchain_community.llms import Ollama
 from langchain_core.messages import HumanMessage, AIMessage
 
@@ -8,7 +9,9 @@ from src.recuperador import recuperador
 # ==========================================
 # CONFIGURAÇÃO DO LLM preciso testar melhores
 # ==========================================
-llm = Ollama(model="llama3.1", temperature=0) 
+
+url_ollama = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
+llm = Ollama(model="llama3.1", temperature=0, base_url=url_ollama) 
 
 # ==========================================
 # NÓ 1: BUSCAR DOCUMENTOS

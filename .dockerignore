@@ -1,8 +1,10 @@
 venv/
 venv_ml/
-src/__pycache__/
+**/__pycache__
+**/*.pyc
 banco_vetorial/
 documentos/
 .env
 .streamlit/
-__pycache__/
+.git
+.gitignore

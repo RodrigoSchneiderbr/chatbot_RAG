@@ -1,3 +1,4 @@
+import os
 from langchain_community.vectorstores import Chroma
 from langchain_community.embeddings import OllamaEmbeddings
 from langchain_community.retrievers import BM25Retriever
@@ -5,12 +6,13 @@ from langchain_classic.retrievers import EnsembleRetriever
 from langchain_core.documents import Document
 
 DIRETORIO_CHROMA = "banco_vetorial/chroma_db"
+url_ollama = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
 
 def configurar_recuperador_hibrido():
     print("Conectando ao banco de dados e configurando buscadores...")
     
     #  Recria a função de Embeddings do Ollama
-    embeddings = OllamaEmbeddings(model="nomic-embed-text")
+    embeddings = OllamaEmbeddings(model="nomic-embed-text", base_url=url_ollama)
     
     # Conecta ao ChromaDB existente no disco
     vectorstore = Chroma(
