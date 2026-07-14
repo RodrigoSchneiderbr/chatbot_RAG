@@ -22,7 +22,7 @@ def configurar_recuperador_hibrido():
     )
     
     # Configura o Buscador Vetorial (Semântico)
-    retriever_vetorial = vectorstore.as_retriever(search_kwargs={"k": 3})
+    retriever_vetorial = vectorstore.as_retriever(search_kwargs={"k": 15})
     
     # Puxa os documentos do ChromaDB para configurar o BM25
     dados_chroma = vectorstore.get()

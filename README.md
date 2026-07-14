@@ -31,8 +31,10 @@ Clone o repositório e crie um ambiente virtual:
 git clone [https://github.com/RodrigoSchneiderbr/chatbot_RAG.git](https://github.com/RodrigoSchneiderbr/chatbot_RAG.git)
 cd chatbot_RAG
 python -m venv venv
-source venv/bin/activate### 3. Instalação das Dependências
+.\venv\Scripts\Activate.ps1
 ```
+### 3. Instalação das Dependências
+
 
 Instalar as dependencias
 
