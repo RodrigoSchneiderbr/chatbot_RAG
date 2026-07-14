@@ -1,0 +1,8 @@
+venv/
+venv_ml/
+src/__pycache__/
+banco_vetorial/
+documentos/
+.env
+.streamlit/
+__pycache__/
