@@ -4,7 +4,7 @@ Um assistente virtual inteligente capaz de ler, interpretar e responder pergunta
 
 ## 🌟 Funcionalidades
 * **100% Local e Privado:** Nenhum dado da sua empresa vai para a internet. O processamento é feito localmente usando [Ollama](https://ollama.com/).
-* **Busca Híbrida (Híbrid Search):** Combina busca semântica (ChromaDB) com busca exata de palavras-chave (BM25) para encontrar códigos e siglas com precisão.
+* **Busca Híbrida (Híbrid Search):** Usando chunks para cada artigo, ou seja para procedimento melhorando a procura.
 * **Memória de Conversação:** O agente lembra do contexto das perguntas anteriores através do `MemorySaver` do LangGraph.
 * **Interface Web:** Interface amigável em chat construída com Streamlit, com suporte a upload de documentos direto pela tela.
 * **Pronto para Docker:** Arquitetura empacotada em contêiner para fácil implantação.
