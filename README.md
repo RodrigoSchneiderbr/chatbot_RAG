@@ -68,17 +68,19 @@ Arquitetura e estrutura do projeto
 
 ``` text
 chatbot_RAG/
-├── .streamlit/             # Configurações da interface
-├── banco_vetorial/         # Onde o ChromaDB salva os dados
-├── documentos/             # Pasta para os PDFs e DOCXs
+├── .streamlit/             # Configurações da interface (Streamlit)
+├── banco_vetorial/         # Onde o ChromaDB salva os dados (persistência)
+├── documentos/             # Pasta para os PDFs e DOCXs de entrada
 ├── src/
+│   ├── __init__.py         # Torna a pasta 'src' um pacote Python (evita erros de importação)
 │   ├── app.py              # Front-end (Streamlit)
-│   ├── agente.py           # Orquestrador (LangGraph)
-│   ├── nos.py              # Ferramentas do Agente (LLM)
-│   ├── recuperador.py      # Busca Híbrida (BM25 + Vetorial)
-│   ├── ingestao.py         # Processamento de PDFs
-│   └── estado.py           # Definição de Memória
-├── .gitignore
-├── Dockerfile
-└── requirements.txt
+│   ├── agente.py           # Orquestrador do fluxo (LangGraph)
+│   ├── nos.py              # Definição dos nós do grafo (LLM & Prompt)
+│   ├── recuperador.py      # Busca Híbrida (BM25 + Vetorial no Chroma)
+│   ├── ingestao.py         # Ingestão estruturada e fatiamento por artigos
+│   └── estado.py           # Definição do esquema de estado/memória do agente
+├── .gitignore              # Ignora arquivos como a venv, banco local e chaves
+├── docker-compose.yml      # Orquestração do Docker (variáveis de ambiente, portas e volumes)
+├── Dockerfile              # Receita de build da imagem Docker do app
+└── requirements.txt        # Dependências do Python
 ```
