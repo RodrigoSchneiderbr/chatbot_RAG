@@ -1,0 +1,14 @@
+services:
+  web:
+    build: .
+    container_name: rag-app
+    ports:
+      - "8501:8501"
+    environment:
+      - OLLAMA_BASE_URL=http://host.docker.internal:11434
+      - PYTHONPATH=/app 
+    volumes:
+      - ./banco_vetorial:/app/banco_vetorial
+      - ./documentos:/app/documentos
+    extra_hosts:
+      - "host.docker.internal:host-gateway"

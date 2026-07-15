@@ -59,7 +59,7 @@ streamlit run app.py
 
 ```
 # 1. Construir a imagem
-docker build -t assistente-rag .
+docker-compose up -d --build
 
 # 2. Rodar o contêiner
 docker run -p 8501:8501 -e OLLAMA_BASE_URL="http://host.docker.internal:11434" assistente-rag

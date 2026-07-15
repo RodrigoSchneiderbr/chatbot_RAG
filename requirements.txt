@@ -9,3 +9,5 @@ pypdf
 docx2txt
 rank_bm25
 streamlit
+langchain-ollama
+langchain-chroma
